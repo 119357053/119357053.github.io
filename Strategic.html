@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GSCS</title>
+	<link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div id="header"><h1 style="font-size:20pt">Global Strategic Consulting Services</h1></div>
+	<nav>
+		<ul>
+			<li><a href="Personal.html">CV</a>
+				<ul>
+					<li><a href="Personal.html">Personal</a></li>
+					<li><a href="education.html">Education</a></li>
+					<li><a href="workExperience.html">Work Experience</a></li>
+				</ul>
+			</li>
+			<li><a href="travel.html">Interests</a>
+				<ul>
+					<li><a href="sport.html">Sport</a></li>
+					<li><a href="travel.html">Travel</a></li>
+				</ul>
+			</li>
+			<li><a href="Strategic.html">Consulting</a></li>
+		</ul>
+	</nav>
+	<h2 style="font-size:25pt;font-family:verdana;text-align:left;color:#000000;margin:5pt">About Us</h2>
+	<p style="margin:5pt">We are a global consulting service based in Cork, Ireland. We help businesses assess and improve performance in the workplace. We have worked with
+	 many huge names such as Amazon, Google, UCC Main Rest and Microsoft. We improved Microsoft's profit margin by 48% in one year. We will turn your
+	  company into a powerhouse like the names mentioned above. With GSCS it's only a matter of time...(and money)</p>
+	<a href="Hyperautomation.html" class="links"><b>Hyper Automation</b></a><br>
+	<a href="multiexperience.html" class="links"><b>Multiexperience</b></a><br>
+	<a href="cloud.html" class="links"><b>Distributed Cloud</b></a>
+	
+	<h3>Contact</h3>
+	 <table cellpadding="20" style="width:40%;margin:10px">
+		<tr>
+			<th>
+				Phone Number
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				Address
+			</th>
+		</tr
+		<tr>
+			<td>
+				+353 - *******
+			</td>
+			<td>
+				info@GSCS.com
+			</td>
+			<td>
+				1 Cork Street<br>Cork City<br>Cork<br>Ireland
+			</td>
+		</tr>
+		</table>
+
+		<div align="center">
+			<form action="/action_page.php">
+				<p>Please select a service:</p>
+				<input type="radio" id="hyperautomation" name="service" value="hyperautomation">
+				<label for="hyperautomation">Hyper Automation</label><br>
+				<br>
+				<input type="radio" id="multiexperience" name="service" value="multiexperience">
+				<label for="multiexperience">Multiexperience</label><br>
+				<br>
+				<input type="radio" id="cloud" name="service" value="cloud">
+				<label for="cloud">Distributed Cloud</label>
+			</form>
+		</div>
+		<button onclick="calcSub()" id="calculate" onclick="calcSub()">Calculate Subtotal</button><br>
+		<a href="../index.html"style="color:#2F2FA2"><b>Return</b></a>
+		<p id="demo"></p>
+			<script type="text/javascript">
+	var subtotal
+	
+		function calcSub()
+		{
+			var hyperautomation = document.getElementById("hyperautomation");
+			var multiexperience = document.getElementById("multiexperience");
+			var cloud = document.getElementById("cloud");
+			
+			if (hyperautomation.checked==true)
+			subtotal = 200
+			else if (multiexperience.checked==true)
+			subtotal = 500
+			else if (cloud.checked==true)
+			subtotal = 1000
+			else 
+				alert("No Option Selected")
+			return subtotal
+		}
+		getElementById("demo").innerHTML = calcSub(subtotal)
+	</script>
+</body>
+</html>

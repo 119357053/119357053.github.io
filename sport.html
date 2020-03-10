@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>IS1113 Project-Sport</title>
+	<link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div id="header"><h1>IS1113-Sport</h1></div>
+	<nav>
+		<ul>
+			<li><a href="Personal.html">CV</a>
+				<ul>
+					<li><a href="Personal.html">Personal</a></li>
+					<li><a href="education.html">Education</a></li>
+					<li><a href="workExperience.html">Work Experience</a></li>
+				</ul>
+			</li>
+			<li><a href="travel.html">Interests</a>
+				<ul>
+					<li><a href="sport.html">Sport</a></li>
+					<li><a href="travel.html">Travel</a></li>
+				</ul>
+			</li>
+			<li><a href="ebus1.html">Consulting</a></li>
+		</ul>
+	</nav>
+	
+	<div>
+	<h3>My Interests-Sport</h3>
+		<p>I have always had a huge interest in sport. I played football, hurling, soccer and golf growing up and still play hurling and football.
+		I regularly watch sport on TV and I'm an avid Manchester United fan. I am also a big Kansas city chiefs fan who won the superbowl last year.
+		 I also follow basketball and support the Brooklyn Nets, who aren't that good.</p>
+	</div>
+	<div class="slideshow-container">
+	
+		<div class="mySlides fade">
+			<div class="numbertext">1 / 5</div>
+			<img src="interestimages/crokePark.jpg" style="width:100%">
+			<div class="text">Croke Park</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">2 / 5</div>
+			<img src="interestimages/gaa.jfif" style="width:100%">
+			<div class="text">GAA</div>
+		</div>
+	
+		<div class="mySlides fade">
+			<div class="numbertext">3 / 5</div>
+			<img src="interestimages/basketball.jfif" style="width:100%">
+			<div class="text">Adidas, Basketball</div>
+		</div>
+	
+		<div class="mySlides fade">
+			<div class="numbertext">4 / 5</div>
+			<img src="interestimages/soccer.jfif" style="width:100%">
+			<div class="text">Soccer</div>
+		</div>		
+		<div class="mySlides fade">
+			<div class="numbertext">5 / 5</div>
+			<img src="interestimages/kansas.jfif" style="width:100%">
+			<div class="text">Kansas City Chiefs</div>
+		</div>
+	</div>
+<br>
+	<div style="text-align:center">
+		<span class="dot"></span> 
+		<span class="dot"></span> 
+		<span class="dot"></span> 
+		<span class="dot"></span>
+		<span class="dot"></span>
+	</div>
+	<br>
+	<a href="index.html"style="color:#2F2FA2"><b>Return</b></a>
+		<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";  
+		}
+		slideIndex++;
+		if (slideIndex > slides.length) {slideIndex = 1}    
+		for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";  
+		dots[slideIndex-1].className += " active";
+		setTimeout(showSlides, 2000); // Change image every 2 seconds
+		}
+		</script>
+</body>
+</html>

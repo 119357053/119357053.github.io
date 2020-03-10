@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS --> 
+	<title>IS1113 Project-Travel</title>
+	<link href="style.css" type="text/css" rel="stylesheet">
+</style>
+</head>
+<body>
+<div id="header"><h1>IS1113-Travel</h1></div>
+	<nav>
+		<ul>
+			<li><a href="Personal.html">CV</a>
+				<ul>
+					<li><a href="Personal.html">Personal</a></li>
+					<li><a href="education.html">Education</a></li>
+					<li><a href="workExperience.html">Work Experience</a></li>
+				</ul>
+			</li>
+			<li><a href="travel.html">Interests</a>
+				<ul>
+					<li><a href="sport.html">Sport</a></li>
+					<li><a href="travel.html">Travel</a></li>
+				</ul>
+			</li>
+			<li><a href="ebus1.html">Consulting</a></li>
+		</ul>
+	</nav>
+	
+	<div>
+	<p>I have always had a great interest in travel. From an early age my parents brought me on trips around Ireland, constantly up and down the counrty
+	to visit relatives and friends</p>
+	<h3>New York</h3>
+		<p>In 2017 my family and I went on holidays to New York where our cousins live. We spent two weeks in New York and surrounding states and 
+		took in all sites. It was pleasant weather and we really enjoyed the holiday</p>
+	<h3>Spain</h3>
+	<p>In 2015 my family and I went to Spain on summer holidays. We spent just under two weeks in the southern region of Spain called Andalucia.
+	We had amazing weather and I really enjoyed the two weeks</p>
+	<h3>Italy</h3>
+	<p> With my school, my friends and I went on a skiing holiday to northern Italy. We spent just over a week going up and down the slopes. It was 
+	such an enjoyable experience, although not all my friends would say the same, with not all of us coming home in one piece. <br>The food on the
+	 slopes was exceptional and I can't wait to go back</p>
+	</div>
+	<div class="slideshow-container">
+	
+		<div class="mySlides fade">
+			<div class="numbertext">2 / 5</div>
+			<img src="interestimages/tramore2.jpg" style="width:100%">
+			<div class="text">Tramore, Ireland</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">3 / 5</div>
+			<img src="interestimages/centralPark.png" style="width:100%">
+			<div class="text">Central Park, New York</div>
+		</div>
+	
+		<div class="mySlides fade">
+			<div class="numbertext">4 / 5</div>
+			<img src="interestimages/sea.jpg" style="width:100%">
+			<div class="text">Doolan</div>
+		</div>
+	
+		<div class="mySlides fade">
+			<div class="numbertext">5 / 5</div>
+			<img src="interestimages/spain2.jpg" style="width:100%">
+			<div class="text">Spain</div>
+		</div>
+	
+		<div class="mySlides fade">
+			<div class="numbertext">1 / 5</div>
+			<img src="interestimages/skyline.jpg" style="width:100%">
+			<div class="text">New York Skyline</div>
+		</div>
+	</div>
+<br>
+	<div style="text-align:center">
+		<span class="dot"></span> 
+		<span class="dot"></span> 
+		<span class="dot"></span> 
+		<span class="dot"></span>
+		<span class="dot"></span>
+	</div>
+	<br>
+	<a href="index.html"style="color:#2F2FA2"><b>Return</b></a>
+		<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";  
+		}
+		slideIndex++;
+		if (slideIndex > slides.length) {slideIndex = 1}    
+		for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";  
+		dots[slideIndex-1].className += " active";
+		setTimeout(showSlides, 2000); // Change image every 2 seconds
+		}
+		</script>
+</body>
+</html>

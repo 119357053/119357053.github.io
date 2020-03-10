@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http.//www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>Ebusiness 1</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+	
+	
+<body>
+	<div id="header"><h1 style="font-size:20pt">Global Strategic Consulting Services</h1></div>
+	<nav>
+		<ul>
+			<li><a href="Personal.html">CV</a>
+				<ul>
+					<li><a href="Personal.html">Personal</a></li>
+					<li><a href="education.html">Education</a></li>
+					<li><a href="workExperience.html">Work Experience</a></li>
+				</ul>
+			</li>
+			<li><a href="travel.html">Interests</a>
+				<ul>
+					<li><a href="sport.html">Sport</a></li>
+					<li><a href="travel.html">Travel</a></li>
+				</ul>
+			</li>
+			<li><a href="Strategic.html">Consulting</a></li>
+		</ul>
+	</nav>
+		<h2 style="font-size:25pt;font-family:verdana;text-align:left;color:#000000;margin:5pt">About Us</h2>
+	<p style="margin:5pt">We are a global consulting service based in Cork, Ireland. We help businesses assess and improve performance in the workplace. We have worked with
+	 many huge names such as Amazon, Google, UCC Main Rest and Microsoft. We improved Microsoft's profit margin by 48% in one year. We will turn your
+	  company into a powerhouse like the names mentioned above. With GSCS it's only a matter of time...(and money)</p>
+	<a href="Hyperautomation.html" class="links"><b>Hyper Automation</b></a><br>
+	<a href="multiexperience.html" class="links"><b>Multiexperience</b></a><br>
+	<a href="cloud.html" class="links"><b>Distributed Cloud</b></a>
+	
+	<h3>Contact</h3>
+	 <table cellpadding="20" style="width:40%;margin:10px">
+		<tr>
+			<th>
+				Phone Number
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				Address
+			</th>
+		</tr
+		<tr>
+			<td>
+				+353 - *******
+			</td>
+			<td>
+				info@GSCS.com
+			</td>
+			<td>
+				1 Cork Street<br>Cork City<br>Cork<br>Ireland
+			</td>
+		</tr>
+		</table>
+	
+        <center>
+        <div class="form">
+            <form name="intCalc" method="post" action="eBus2.php">
+                <center>
+            <h1>Select a consulting service</h1>    
+                </center>
+        <hr/>
+        <center>
+            <table cellspacing="10">
+                <tr>
+                    <td>HyperAutomation $200</td>
+                    <td><input type="radio" id="hyper" name="service" value="200"  required /></td>
+                </tr>
+                <tr>
+                    <td>MultiExperience $500</td>
+                    <td><input type="radio" id="multi" name="service" value="500" /></td>
+                </tr>
+                <tr>
+                    <td>Distributed Cloud $1000</td>
+                    <td><input type="radio" id="cloud" name="service" value="1000" /></td>
+                </tr>
+            </table>
+        </center>
+        <br/>
+            <center>
+                 <table cellspacing="10">
+            <tr>
+                    <td><b></b></td>
+                    <td><b>Amount</b></td>
+            </tr>
+                <tr>
+                    <td>Sub Total</td>
+                    <td><input type="text" id="txtSubTot" name="txtSub" readonly  required/></td>
+                </tr>
+                <tr>
+                    <td>Discount @ 5%</td>
+                    <td><input type="text" id="txtDisc" name="txtDisc" readonly  required/></td>
+                </tr>
+                <tr>
+                    <td>+ VAT @ 20%</td>
+                    <td><input type="text" id="txtVAT" name="txtVAT" readonly required /></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td><input type="text" id="txtTotal" name="txtTotal" value="" readonly required/></td>
+                </tr>
+            </table>
+        </center>
+       
+        <br />
+            <center>
+            <input type="button" name="btnCalc" id="btnCalc" onclick="calcSub()" value="Calculate Amount"/>
+            <input type="button" name="btnClear" id="btnClear" onclick="AmountClear()" value="Clear"/>
+			
+        </center>
+            </form>
+        </div>
+        </center>
+            <script type="text/javascript">
+                function calcSub(){
+                    //Assigning variables to the values8
+                    var argSelection = parseFloat(document.getElementById('txtSubTot').value);
+                    var hyper = parseFloat(document.getElementById('hyper').value);
+                    var multi = parseFloat(document.getElementById('multi').value);
+                    var cloud = parseFloat(document.getElementById('cloud').value);
+                   
+                    // if radio buttons are clicked, values are assigned
+                    if (document.getElementById('hyper').checked) {
+                        document.intCalc.txtSubTot.value = hyper;
+                        argSelection = hyper;
+                        calcVatTotal(argSelection);
+                       
+                    }
+                   else if (document.getElementById('multi').checked) {
+                        document.intCalc.txtSubTot.value = multi;
+                        argSelection = multi;
+                        calcVatTotal(argSelection);
+                       
+                    }
+                    else if (document.getElementById('cloud').checked) {
+                        document.intCalc.txtSubTot.value = cloud;
+                        argSelection = cloud;
+                        calcVatTotal(argSelection);
+                    }
+                }
+					//function for calculating discount and VAT//
+					function calcVatTotal(parmSelection) {
+                    var subTotal = parseFloat(parmSelection);
+                    var argdiscountAmt = parseFloat(subTotal * .10);
+                    var argvatAmt= parseFloat(subTotal * .20);    
+                    var total = parseFloat(subTotal - argdiscountAmt + argvatAmt);
+					//Inserting them into the correct fields//
+				    document.intCalc.txtDisc.value = argdiscountAmt;
+                    document.intCalc.txtVAT.value = argvatAmt;
+                    document.intCalc.txtTotal.value = total;
+                }
+					
+                function AmountClear() {
+                    document.getElementById("txtSubTot").value="";
+                    document.getElementById("txtDisc").value="";
+                    document.getElementById("txtVAT").value="";
+                    document.getElementById("txtTotal").value="";
+                }
+                   
+            </script>
+    </body>
+    </html>
